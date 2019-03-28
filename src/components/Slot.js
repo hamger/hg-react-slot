@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Consumer } from './withSlot';
 
+// eslint-disable-next-line react/prop-types
 const Slot = ({ name, children }) => (
   <Consumer>
     {context => {
@@ -12,7 +13,7 @@ const Slot = ({ name, children }) => (
 );
 
 Slot.displayName = 'Slot';
-Slot.propTypes = { name: PropTypes.string, children: PropTypes.node };
+Slot.propTypes = { name: PropTypes.string };
 Slot.defaultProps = { name: 'default' };
 
 export default Slot;
