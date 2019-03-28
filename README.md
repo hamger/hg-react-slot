@@ -1,6 +1,6 @@
 # hg-react-slot
 
-用于实现具名插槽的 react 组件
+[A React implementation of slots.](https://hamger.github.io/hg-react-slot/)
 
 # 工程结构
 
@@ -55,3 +55,9 @@
         npm i -g serve
         serve -s examples/dist
     ```
+
+## Changelog
+
+### 2019.3.28
+
+> v0.1.0 项目初始化
