@@ -16,7 +16,6 @@
 ├── package.json
 ├── rollup.config.js
 ├── src                     // 源代码
-├── style                   // 源代码样式
 └── webpack.config.js
 ```
 
