@@ -1,7 +1,7 @@
 import React from 'react';
-import { Slot } from '@';
+import { Slot, withSlot } from '@';
 
-export default () => (
+const Comp = () => (
   <div>
     <header>
       <Slot name="header" />
@@ -14,3 +14,5 @@ export default () => (
     </footer>
   </div>
 );
+
+export default withSlot(Comp);

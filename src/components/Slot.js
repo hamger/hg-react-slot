@@ -6,8 +6,8 @@ import { Consumer } from './withSlot';
 const Slot = ({ name, children }) => (
   <Consumer>
     {context => {
-      const toSlotContent = context.getToSlotContent(name);
-      return (toSlotContent && toSlotContent()) || children || null;
+      const slotContent = context.getSlotContent(name);
+      return (slotContent && slotContent()) || children || null;
     }}
   </Consumer>
 );

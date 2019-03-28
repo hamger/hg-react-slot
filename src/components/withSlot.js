@@ -11,12 +11,12 @@ export default WrappedComponent =>
     static displayName = `withSlot(${getDisplayName(WrappedComponent)})`;
 
     // 用于保存每个 <ToSlot /> 的内容
-    toSlotContent = {};
+    slotContent = {};
 
     // 获取 ToSlot 的内容
-    getToSlotContent = name => {
-      if (!this.toSlotContent[name]) return undefined;
-      return () => this.toSlotContent[name];
+    getSlotContent = name => {
+      if (!this.slotContent[name]) return undefined;
+      return () => this.slotContent[name];
     };
 
     render() {
@@ -24,21 +24,19 @@ export default WrappedComponent =>
       const { children, ...restProps } = this.props;
 
       if (children) {
-        const arr = React.Children.toArray(children);
-        this.toSlotContent = {};
-        arr.forEach(item => {
-          if (item.type.displayName === 'ToSlot') {
-            const slotName = item.props.slot || 'default';
-            if (slotName in this.toSlotContent) {
-              throw new Error(`Slot(${slotName}) has been occupied`);
-            }
-            this.toSlotContent[slotName] = item.props.children;
+        this.slotContent = {};
+        children.forEach(item => {
+          if (!React.isValidElement(item)) return;
+          const slotName = item.props.slot || 'default';
+          if (slotName in this.slotContent) {
+            throw new Error(`Slot(${slotName}) has been occupied`);
           }
+          this.slotContent[slotName] = item;
         });
       }
 
       return (
-        <Provider value={{ getToSlotContent: this.getToSlotContent }}>
+        <Provider value={{ getSlotContent: this.getSlotContent }}>
           <WrappedComponent {...restProps} />
         </Provider>
       );

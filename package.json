@@ -1,6 +1,6 @@
 {
   "name": "hg-react-slot",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A react component template",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -48,8 +48,7 @@
   "keywords": [
     "react",
     "component",
-    "template",
-    "react-component"
+    "slot"
   ],
   "peerDependencies": {
     "react": "^16.3.0"
