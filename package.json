@@ -111,6 +111,8 @@
     "prop-types": "^15.5.0"
   },
   "jest": {
+    "verbose": true,
+    "testURL":"http://localhost/",
     "roots": [
       "src"
     ],

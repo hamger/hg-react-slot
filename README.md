@@ -53,14 +53,17 @@ export default () => (
   <div>
     <MyComponent>
       <h1 slot="header">Header Content</h1>
-      <p>Body Content</p>
+      <React.Fragment>
+        <p>paragraph1</p>
+        <p>paragraph2</p>
+      </React.Fragment>
       <div slot="footer">Footer Content</div>
     </MyComponent>
   </div>
 );
 ```
 
-## Changelog
+## Change Log
 
 ### 2019.3.28
 

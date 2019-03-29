@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withSlot should accept children with slot 1`] = `
+<div>
+  <header>
+    <h1
+      slot="header"
+    >
+      Header Content
+    </h1>
+  </header>
+  <main />
+  <footer>
+    <div
+      slot="footer"
+    >
+      Footer Content
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`withSlot should have sane defaults 1`] = `
+<div>
+  <header />
+  <main />
+  <footer />
+</div>
+`;

@@ -1,4 +1,4 @@
-import Slot from './components/Slot';
-import withSlot from './components/withSlot';
+import Slot from './Slot';
+import withSlot from './withSlot';
 
 export { Slot, withSlot };
