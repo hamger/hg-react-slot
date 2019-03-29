@@ -1,6 +1,7 @@
 # hg-react-slot
 
 ![build passed](https://img.shields.io/badge/build-passed-brightgreen.svg)
+[![codecov](https://codecov.io/gh/hamger/hg-react-slot/branch/master/graph/badge.svg)](https://codecov.io/gh/hamger/hg-react-slot)
 ![licence MIT](https://img.shields.io/badge/licence-MIT-orange.svg)
 ![npm](https://img.shields.io/npm/v/hg-react-slot.svg?color=blue)
 
