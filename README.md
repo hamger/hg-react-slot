@@ -67,7 +67,7 @@ export default () => (
 
 ### 2019.3.29
 
-> v1.0.0 Add unit test
+> v0.2.0 Add unit test
 
 ### 2019.3.28
 

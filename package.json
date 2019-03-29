@@ -1,6 +1,6 @@
 {
   "name": "hg-react-slot",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "A React implementation of slots.",
   "main": "lib/index.js",
   "module": "esm/index.js",
