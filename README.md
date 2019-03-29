@@ -1,63 +1,67 @@
 # hg-react-slot
 
-[A React implementation of slots.](https://hamger.github.io/hg-react-slot/)
+A React implementation of slots.
 
-# 工程结构
+## Install
 
-```
-├── LICENSE
-├── README.md
-├── dist                    // 产物外链版本
-├── esm                     // 产物ES6版本
-├── examples                // 示例代码
-├── lib                     // 产物ES5正常版本
-├── node_modules
-├── package-lock.json
-├── package.json
-├── rollup.config.js
-├── src                     // 源代码
-└── webpack.config.js
+```bash
+yarn add hg-react-slot
 ```
 
-# 使用说明
+or with npm:
 
-- 产出三种格式的代码：
+```bash
+npm install --save hg-react-slot
+```
 
-  - `dist`: 外链版本，通过`script`标签引入
-  - `esm`: es6 语法版本
-  - `lib`: es5 语法常用版本
+## Usage
 
-- style 独立放置
+Create a component with `hg-react-slot` :
 
-  - 可仅提供`.css`，也可以额外提供`.less`和`.scss`
+```js
+// MyComponent.js
+import React from "react";
+import { Slot, withSlot } from "hg-react-slot";
 
-- 命令
+const MyComponent = () => (
+  <div>
+    <header>
+      <Slot name="header" />
+    </header>
+    <main>
+      <Slot />
+    </main>
+    <footer>
+      <Slot name="footer" />
+    </footer>
+  </div>
+);
 
-  - `npm run build`: 构建产物
-  - `npm run start`: 本地启动，默认端口`8000`
-    - `examples`中按照引用包的方式引用了`hg-react-slot`组件，在`webpack.config.js`中按照如下配置
-      ```
-      resolve: {
-        alias: {
-          'hg-react-slot': path.resolve(__dirname),
-        },
-      },
-      ```
-  - `npm run format`: 格式化
-  - `npm run lint`: 代码校验，配置规则在`.eslintrc`中
-  - `npm run test`: 运行测试用例
-    - 测试用例语法参考：[Jest](https://facebook.github.io/jest/)
+export default withSlot(MyComponent);
+```
 
-- 在`examples/dist`目录下启动服务
+> `<Slot />` is equivalent to `<Slot name="default" />`.
 
-  - `serve`需要通过 npm 全局安装
-    ```
-        npm i -g serve
-        serve -s examples/dist
-    ```
+In other components, you can use `MyComponent` like this:
+
+```js
+// App.js
+import React from "react";
+import MyComponent from "./MyComponent.js";
+
+export default () => (
+  <div>
+    <MyComponent>
+      <h1 slot="header">Header Content</h1>
+      <p>Body Content</p>
+      <div slot="footer">Footer Content</div>
+    </MyComponent>
+  </div>
+);
+```
 
 ## Changelog
 
 ### 2019.3.28
 
-> v0.1.0 项目初始化
+> v0.1.0 Initialize project

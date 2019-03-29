@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slot, withSlot } from '@';
 
-const Comp = () => (
+const MyComponent = () => (
   <div>
     <header>
       <Slot name="header" />
@@ -15,4 +15,4 @@ const Comp = () => (
   </div>
 );
 
-export default withSlot(Comp);
+export default withSlot(MyComponent);
