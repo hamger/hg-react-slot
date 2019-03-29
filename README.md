@@ -1,5 +1,9 @@
 # hg-react-slot
 
+![build passed](https://img.shields.io/badge/build-passed-brightgreen.svg)
+![licence MIT](https://img.shields.io/badge/licence-MIT-orange.svg)
+![npm](https://img.shields.io/npm/v/hg-react-slot.svg?color=blue)
+
 A React implementation of slots.
 
 ## Install
