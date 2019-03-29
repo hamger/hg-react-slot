@@ -65,6 +65,10 @@ export default () => (
 
 ## Change Log
 
+### 2019.3.29
+
+> v1.0.0 Add unit test
+
 ### 2019.3.28
 
 > v0.1.0 Initialize project
