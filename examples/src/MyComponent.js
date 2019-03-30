@@ -8,6 +8,7 @@ const MyComponent = () => (
     </header>
     <main>
       <Slot />
+      <Slot name="default2" />
     </main>
     <footer>
       <Slot name="footer" />
