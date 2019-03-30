@@ -34,6 +34,7 @@ const MyComponent = () => (
       <Slot name="header" />
     </header>
     <main>
+      {/* `<Slot />` is equivalent to `<Slot name="default" />`  */}
       <Slot />
     </main>
     <footer>
@@ -45,22 +46,22 @@ const MyComponent = () => (
 export default withSlot(MyComponent);
 ```
 
-> `<Slot />` is equivalent to `<Slot name="default" />`.
-
-In other components, you can use `MyComponent` like this:
+In other components, you can use `MyComponent` like this :
 
 ```js
 // App.js
 import React from "react";
 import MyComponent from "./MyComponent.js";
 
-// use HOC, because of React.Fragment can only have `key` and `children` props.
+// if you need to use React.Fragment, you should create a component like this.
+// Because React.Fragment can only have `key` and `children` props.
 const Frag = ({ children }) => <React.Fragment>{children}</React.Fragment>;
 
 export default () => (
   <div>
     <MyComponent>
       <h1 slot="header">Header Content</h1>
+      {/* `<Frag />` is equivalent to `<Frag slot="default" />`  */}
       <Frag>
         <p>paragraph1</p>
         <p>paragraph2</p>
