@@ -1,8 +1,8 @@
 # hg-react-slot
 
-![build passed](https://img.shields.io/badge/build-passed-brightgreen.svg)
+![build](https://travis-ci.org/hamger/hg-react-slot.svg?branch=master)
 [![codecov](https://codecov.io/gh/hamger/hg-react-slot/branch/master/graph/badge.svg)](https://codecov.io/gh/hamger/hg-react-slot)
-![licence MIT](https://img.shields.io/badge/licence-MIT-orange.svg)
+![NPM](https://img.shields.io/npm/l/hg-react-slot.svg?color=orange)
 ![npm](https://img.shields.io/npm/v/hg-react-slot.svg?color=blue)
 
 A React implementation of slots.

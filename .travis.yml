@@ -4,8 +4,7 @@ node_js:
   - "8"
   - "6"
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
-  - export PATH="$HOME/.yarn/bin:$PATH"
+  - export CODECOV_TOKEN="6a8bceb3-ad64-4552-b359-bcfa4a7df98b"
 cache:
   yarn: true
   directories:
