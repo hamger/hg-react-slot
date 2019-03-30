@@ -61,7 +61,7 @@ export default () => (
   <div>
     <MyComponent>
       <h1 slot="header">Header Content</h1>
-      {/* `<Frag />` is equivalent to `<Frag slot="default" />`  */}
+      {/* `<Frag>` is equivalent to `<Frag slot="default">`  */}
       <Frag>
         <p>paragraph1</p>
         <p>paragraph2</p>
