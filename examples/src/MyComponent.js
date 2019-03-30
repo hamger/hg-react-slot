@@ -8,7 +8,9 @@ const MyComponent = () => (
     </header>
     <main>
       <Slot />
-      <Slot name="default2" />
+      <Slot name="last">
+        <p>last paragraph</p>
+      </Slot>
     </main>
     <footer>
       <Slot name="footer" />

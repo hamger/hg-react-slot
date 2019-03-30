@@ -1,12 +1,14 @@
-import React from "react";
-import MyComponent from "./MyComponent.js";
-import Frag from "./Frag.js";
-import "./App.less";
+import React from 'react';
+import MyComponent from './MyComponent.js';
+import Frag from './Frag.js';
+import './App.less';
 
 export default () => (
-  <div className="app">
+  <div>
+    <h1>Title</h1>
     <MyComponent>
-      <h1 slot="header">Header Content</h1>
+      <h3 slot="header">Header Content</h3>
+      {/* `<Frag>` is equivalent to `<Frag slot="default">`  */}
       <Frag>
         <p>paragraph1</p>
         <p>paragraph2</p>

@@ -19,7 +19,7 @@ const MyComponent = withSlot(() => (
     </header>
     <main>
       <Slot />
-      <Slot name="main" />
+      <Slot name="last" />
     </main>
     <footer>
       <Slot name="footer" />
