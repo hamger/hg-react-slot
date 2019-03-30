@@ -19,11 +19,3 @@ exports[`withSlot should accept children with slot 1`] = `
   </footer>
 </div>
 `;
-
-exports[`withSlot should have sane defaults 1`] = `
-<div>
-  <header />
-  <main />
-  <footer />
-</div>
-`;

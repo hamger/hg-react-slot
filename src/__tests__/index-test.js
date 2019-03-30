@@ -38,9 +38,9 @@ describe('withSlot', () => {
     };
   });
 
-  it('should have sane defaults', () => {
-    expectToMatchSnapshot(<MyComponent />);
-  });
+  // it("should have sane defaults", () => {
+  //   expectToMatchSnapshot(<MyComponent />);
+  // });
 
   it('should accept children with slot', () => {
     expectToMatchSnapshot(
@@ -50,5 +50,16 @@ describe('withSlot', () => {
         <div slot="footer">Footer Content</div>
       </MyComponent>,
     );
+  });
+
+  it('should throw error when use duplicate slot name', () => {
+    expect(() => {
+      renderer.create(
+        <MyComponent>
+          <h1>Header Content</h1>
+          <div slot="default">Header Content2</div>
+        </MyComponent>,
+      );
+    }).toThrowError(new Error('Slot(default) has been occupied'));
   });
 });
