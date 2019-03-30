@@ -77,7 +77,7 @@ export default () => (
 );
 ```
 
-After running the above code, resulting HTML like this:
+After running the above code, resulting HTML is:
 
 ```html
 <div>
