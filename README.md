@@ -73,6 +73,10 @@ export default () => (
 
 ## Change Log
 
+### 2019.3.30
+
+> v0.2.1 Add travis-ci and codecov
+
 ### 2019.3.29
 
 > v0.2.0 Add unit test
