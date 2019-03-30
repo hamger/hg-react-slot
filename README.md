@@ -54,15 +54,18 @@ In other components, you can use `MyComponent` like this:
 import React from "react";
 import MyComponent from "./MyComponent.js";
 
+// use HOC, because of React.Fragment can only have `key` and `children` props.
+const Frag = ({ children }) => <React.Fragment>{children}</React.Fragment>;
+
 export default () => (
   <div>
     <MyComponent>
       <h1 slot="header">Header Content</h1>
-      <React.Fragment>
+      <Frag>
         <p>paragraph1</p>
         <p>paragraph2</p>
-      </React.Fragment>
-      <div slot="footer">Footer Content</div>
+      </Frag>
+      <Frag slot="footer">Footer Content</Frag>
     </MyComponent>
   </div>
 );

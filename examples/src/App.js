@@ -7,12 +7,11 @@ export default () => (
   <div className="app">
     <MyComponent>
       <h1 slot="header">Header Content</h1>
-      <Frag slot="default">
+      <Frag>
         <p>paragraph1</p>
         <p>paragraph2</p>
       </Frag>
-      <Frag slot="default2">paragraph1paragraph2</Frag>
-      <div slot="footer">Footer Content</div>
+      <Frag slot="footer">Footer Content</Frag>
     </MyComponent>
   </div>
 );
