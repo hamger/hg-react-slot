@@ -76,7 +76,7 @@ export default () => (
 
 ### 2019.3.30
 
-> v0.2.1 Add travis-ci and codecov
+> v0.2.2 Add travis-ci and codecov
 
 ### 2019.3.29
 
