@@ -19,16 +19,13 @@ const MyComponent = withSlot(() => (
     </header>
     <main>
       <Slot />
+      <Slot name="main" />
     </main>
     <footer>
       <Slot name="footer" />
     </footer>
   </div>
 ));
-
-function expectToMatchSnapshot(component) {
-  expect(renderer.create(component).toJSON()).toMatchSnapshot();
-}
 
 describe('withSlot', () => {
   beforeAll(() => {
@@ -38,18 +35,19 @@ describe('withSlot', () => {
     };
   });
 
-  // it("should have sane defaults", () => {
-  //   expectToMatchSnapshot(<MyComponent />);
-  // });
-
   it('should accept children with slot', () => {
-    expectToMatchSnapshot(
-      <MyComponent>
-        <h1 slot="header">Header Content</h1>
-        Body Content2
-        <div slot="footer">Footer Content</div>
-      </MyComponent>,
-    );
+    expect(
+      renderer
+        .create(
+          <MyComponent>
+            <h1 slot="header">Header Content</h1>
+            Body Content
+            <React.Fragment>Body Content2</React.Fragment>
+            <div slot="footer">Footer Content</div>
+          </MyComponent>,
+        )
+        .toJSON(),
+    ).toMatchSnapshot();
   });
 
   it('should throw error when use duplicate slot name', () => {

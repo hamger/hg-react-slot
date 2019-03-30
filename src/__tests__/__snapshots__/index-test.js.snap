@@ -9,7 +9,9 @@ exports[`withSlot should accept children with slot 1`] = `
       Header Content
     </h1>
   </header>
-  <main />
+  <main>
+    Body Content2
+  </main>
   <footer>
     <div
       slot="footer"
