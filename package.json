@@ -106,7 +106,6 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
-    "classnames": "^2.2.0",
     "prop-types": "^15.5.0"
   },
   "jest": {
