@@ -1,10 +1,10 @@
 import React from 'react';
 import MyComponent from './MyComponent.js';
 import Frag from './Frag.js';
-import './App.less';
+import './App.css';
 
 export default () => (
-  <div>
+  <div className="app">
     <div>Other Content</div>
     <MyComponent>
       <Frag slot="footer">Footer Content</Frag>
