@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const sourceDirectory = path.resolve(__dirname, 'examples/src');
@@ -21,7 +21,9 @@ const plugins = [
     },
   }),
   new webpack.HotModuleReplacementPlugin(),
-  new ExtractTextPlugin('index-[contenthash:8].css'),
+  new MiniCssExtractPlugin({
+    filename: "[name]-[hash].css"
+  }),
   new webpack.optimize.ModuleConcatenationPlugin(),
 ];
 
@@ -43,6 +45,7 @@ if (!isDev) {
 }
 
 module.exports = {
+  mode: isDev ? 'development' : 'production',
   context: sourceDirectory,
   entry: {
     index: './index.js',
@@ -72,10 +75,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader'],
-        }),
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
       },
       {
         test: /\.html$/,
