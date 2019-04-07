@@ -7,13 +7,13 @@ export default () => (
   <div>
     <div>Other Content</div>
     <MyComponent>
-      <h3 slot="header">Header Content</h3>
+      <Frag slot="footer">Footer Content</Frag>
       {/* `<Frag>` is equivalent to `<Frag slot="default">`  */}
       <Frag>
         <p>paragraph1</p>
         <p>paragraph2</p>
       </Frag>
-      <Frag slot="footer">Footer Content</Frag>
+      <h3 slot="header">Header Content</h3>
     </MyComponent>
   </div>
 );
