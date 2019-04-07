@@ -5,7 +5,7 @@ import './App.less';
 
 export default () => (
   <div>
-    <h1>Title</h1>
+    <div>Other Content</div>
     <MyComponent>
       <h3 slot="header">Header Content</h3>
       {/* `<Frag>` is equivalent to `<Frag slot="default">`  */}

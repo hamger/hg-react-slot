@@ -1,10 +1,14 @@
 {
   "name": "hg-react-slot",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A React implementation of slots.",
+  "author": "Hanger",
+  "license": "MIT",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "scripts": {
+    "start": "webpack-dev-server --inline --content-base examples/",
+    "test": "cross-env BABEL_OUTPUT=commonjs jest",
     "clean:commonjs": "rimraf lib",
     "clean:umd": "rimraf dist",
     "clean:esm": "rimraf esm",
@@ -15,26 +19,17 @@
     "build:esm": "babel src/ --out-dir esm/ --ignore **/__tests__,**/__mocks__",
     "build:umd": "rollup -c",
     "build": "npm-run-all clean:* --parallel build:*",
-    "format": "eslint src --fix",
     "lint": "eslint src",
     "precommit": "lint-staged",
-    "prebump": "run-s lint test",
-    "prepare": "npm run build",
-    "release": "standard-version --sign",
-    "test": "cross-env BABEL_OUTPUT=commonjs jest",
     "codecov": "codecov",
-    "start": "webpack-dev-server --inline --content-base examples/",
     "website": "run-s website:clean website:build",
     "website:clean": "rimraf examples/dist",
-    "website:build": "cross-env NODE_ENV=production webpack",
-    "tonpm": "npm run build && npm version patch && npm publish"
+    "website:build": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hamger/hg-react-slot.git"
   },
-  "author": "damujiangr",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hamger/hg-react-slot/issues"
   },
@@ -81,7 +76,6 @@
     "hoist-non-react-statics": "^2.3.1",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
-    "husky": "^0.14.3",
     "jest": "^22.3.0",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
@@ -99,7 +93,6 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^3.0.0",
-    "standard-version": "^4.2.0",
     "style-loader": "^0.20.0",
     "uglifyjs-webpack-plugin": "^1.2.3",
     "webpack": "^3.6.0",
@@ -118,7 +111,7 @@
     "testRegex": "/__tests__/.+-test\\.js$"
   },
   "lint-staged": {
-    "src/**/*.js": [
+    "*.js": [
       "eslint --fix",
       "git add"
     ]

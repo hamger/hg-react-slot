@@ -3,7 +3,7 @@
 ![build](https://travis-ci.org/hamger/hg-react-slot.svg?branch=master)
 [![codecov](https://codecov.io/gh/hamger/hg-react-slot/branch/master/graph/badge.svg)](https://codecov.io/gh/hamger/hg-react-slot)
 ![NPM](https://img.shields.io/npm/l/hg-react-slot.svg?color=orange)
-![npm](https://img.shields.io/npm/v/hg-react-slot.svg?color=blue)
+[![npm](https://img.shields.io/npm/v/hg-react-slot.svg?color=blue)](https://www.npmjs.com/package/hg-react-slot)
 
 A React implementation of slots.
 
@@ -32,14 +32,14 @@ const MyComponent = () => (
   <div>
     <header>
       <Slot name="header" />
+      {/* `<span>anonymity</span>` will be defalut content for Slot(author) */}
+      <Slot name="author">
+        <span>anonymity</span>
+      </Slot>
     </header>
     <main>
       {/* `<Slot />` is equivalent to `<Slot name="default" />`  */}
       <Slot />
-      {/* `<p>last paragraph</p>` will be defalut content for Slot(last) */}
-      <Slot name="last">
-        <p>last paragraph</p>
-      </Slot>
     </main>
     <footer>
       <Slot name="footer" />
@@ -63,7 +63,7 @@ const Frag = ({ children }) => <React.Fragment>{children}</React.Fragment>;
 
 export default () => (
   <div>
-    <h1>Title</h1>
+    <div>Other Content</div>
     <MyComponent>
       <h3 slot="header">Header Content</h3>
       {/* `<Frag>` is equivalent to `<Frag slot="default">`  */}
@@ -81,13 +81,15 @@ After running the above code, resulting HTML is:
 
 ```html
 <div>
-  <h1>Title</h1>
+  <div>Other Content</div>
   <div>
-    <header><h3 slot="header">Header Content</h3></header>
+    <header>
+      <h3 slot="header">Header Content</h3>
+      <span>anonymity</span>
+    </header>
     <main>
       <p>paragraph1</p>
       <p>paragraph2</p>
-      <p>last paragraph</p>
     </main>
     <footer>Footer Content</footer>
   </div>
@@ -95,6 +97,10 @@ After running the above code, resulting HTML is:
 ```
 
 ## Change Log
+
+### 2019.4.7
+
+> v0.2.3 Update README
 
 ### 2019.3.30
 

@@ -10,10 +10,9 @@ export default WrappedComponent =>
   class extends React.Component {
     static displayName = `withSlot(${getDisplayName(WrappedComponent)})`;
 
-    // 用于保存每个 <ToSlot /> 的内容
     slotContent = {};
 
-    // 获取 ToSlot 的内容
+    // get the content of slots
     getSlotContent = name => {
       if (!this.slotContent[name]) return undefined;
       return () => this.slotContent[name];
