@@ -6,6 +6,8 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "esm/index.js",
+  "unpkg": "dist/hg-react-slot.development.js",
+  "jsdelivr": "dist/hg-react-slot.development.js",
   "scripts": {
     "start": "webpack-dev-server --inline --content-base examples/",
     "test": "cross-env BABEL_OUTPUT=commonjs jest",
