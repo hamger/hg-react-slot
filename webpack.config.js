@@ -1,8 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const sourceDirectory = path.resolve(__dirname, 'examples/src');
 const targetDirectory = path.resolve(__dirname, 'examples/dist');
@@ -22,7 +21,7 @@ const plugins = [
   }),
   new webpack.HotModuleReplacementPlugin(),
   new MiniCssExtractPlugin({
-    filename: "[name]-[hash].css"
+    filename: '[name]-[hash].css',
   }),
   new webpack.optimize.ModuleConcatenationPlugin(),
 ];
@@ -30,16 +29,7 @@ const plugins = [
 if (!isDev) {
   plugins.push(
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }));
-  plugins.push(
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: {
-            warnings: false,
-        },
-      },
-      sourceMap: false,
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
   );
 }
@@ -75,10 +65,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader"
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.html$/,
@@ -92,7 +79,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   plugins,
