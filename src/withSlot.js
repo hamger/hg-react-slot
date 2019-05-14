@@ -19,7 +19,6 @@ export default WrappedComponent =>
     };
 
     render() {
-      // eslint-disable-next-line react/prop-types
       const { children, ...restProps } = this.props;
 
       if (children) {
